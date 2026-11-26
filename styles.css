@@ -2,7 +2,6 @@
 
 :root {
     --bg-color: #141719;
-    --surface-color: #1d2124;
    /* --hover-color: #303b34;*/
     --accent-color: #a3af94;
     --heading-color: #e1d9c7;
@@ -261,6 +260,7 @@ footer {
 
     nav {
         border-right: none;
+        border-top: 1px solid var(--border-color);
         border-bottom: 1px solid var(--border-color);
         padding-bottom: 20px;
     }
@@ -277,6 +277,7 @@ footer {
     aside {
         border-right: none;
         border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
         padding-top: 20px;
     }
 
@@ -330,21 +331,42 @@ footer {
 
 /* ---------------- Content-based Breakpoint ---------------- */
 
-@media screen and (max-width: 486px) {
+/*@media screen and (max-width: 433px) {
 
     nav ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        align-items: center;
+        gap: 12px 20px;
     }
 
     nav ul>li {
-        flex-basis: calc((100% - 32px) / 3);
+        flex-basis: auto;
         text-align: center;
     }
 
-    nav ul>li:nth-child(-n+2) {
-        flex-basis: calc((100% - 16px) / 2);
+    nav ul::after {
+        content: "";
+        flex-basis: 100%;
+        height: 0;
+        order: 1;
+    }
+
+    nav ul>li:nth-child(n+3) {
+        order: 2;
+    }
+}*/
+
+@media screen and (max-width: 486px) {
+
+    nav ul {
+        max-width: 280px;
+        margin: 0 auto;
+        gap: 12px 20px;
+    }
+
+    nav ul>li {
+        flex-basis: auto;
     }
 }
